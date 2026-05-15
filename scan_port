@@ -1,1 +1,14 @@
+#!/bin/bash
 
+$ip="125.221.90.20"
+$ports=@(80,443,8080,8081,8000,9000)
+foreach ($port in $ports) {
+    $tcpClient=New-Object System.Net.Sockets.TCPClient
+    try{
+    $tcpClient.Connect($ip,$port)
+    Write-Host "端口 $port 开放"
+    $tcpClient.Close()
+    } catch{
+        Write-Host "端口 $port 关闭"
+    }
+}
