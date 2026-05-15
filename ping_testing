@@ -20,7 +20,7 @@ echo "    开始进行设备网络连通性检测..."
 echo "======================================"
 
 for IP in "${TARGETS[@]}"; do
-    ping -c 1 -w 1 "$IP" > /dev/null 2>$1    #-c 1:只发送一个包  ；-w 1:超时时间1秒
+    ping -c 1 -w 1 "$IP" > /dev/null 2>&1    #-c 1:只发送一个包  ；-w 1:超时时间1秒
     if [ $? -eq 0 ]; then     #$?:ping通返回0
         echo -e "${GREEN}[UP]${NC}   $IP"
     else
