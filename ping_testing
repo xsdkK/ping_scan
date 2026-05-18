@@ -4,6 +4,7 @@ Green='\033[0;32m'  #printf Green
 NC='\033[0m'     #No Color
 
 TARGETS=(
+    "192.168.85.128"   #网关地址
     "192.168.30.1"     #AR1与SW1连接端口ip
     "192.168.30.100"   #SW1上vlanif30 IP
     "192.168.20.100"   #SW1上vlanif20 IP
